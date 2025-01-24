@@ -3,6 +3,12 @@ using UnityEngine;
 public class DestroyBubble : MonoBehaviour
 {
     private bool isPopped = false;
+    private CircleCollider2D circleCollider;
+
+    private void Start()
+    {
+        circleCollider = GetComponent<CircleCollider2D>();
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -23,8 +29,7 @@ public class DestroyBubble : MonoBehaviour
             }
             else
             {
-                Destroy(gameObject);
-                //reduce life
+                circleCollider.isTrigger = true;
             }
         }
     }
