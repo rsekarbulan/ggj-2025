@@ -1,29 +1,21 @@
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class Typer : MonoBehaviour
 {
-    public WordBank wordBank = null;
-    public TextMeshProUGUI wordOutput = null;
+    public TextMeshProUGUI wordOutput = null; // Output to display the word
+    public string targetWord = "example";    // The specific word to type
 
     private string remainingWord = string.Empty;
-    private string currentWord = string.Empty;
 
     private void Start()
     {
-        SetCurrentWord();
+        SetWord(targetWord); // Set the target word at the start
     }
 
-    private void SetCurrentWord()
+    private void SetWord(string newWord)
     {
-        currentWord = wordBank.GetWord();
-        SetRemainingWord(currentWord);
-    }
-
-    private void SetRemainingWord(string newString)
-    {
-        remainingWord = newString;
+        remainingWord = newWord;
         wordOutput.text = remainingWord;
     }
 
@@ -47,30 +39,36 @@ public class Typer : MonoBehaviour
 
     private void EnterLetter(string typedLetter)
     {
-        if (isCorrectLetter(typedLetter))
+        if (IsCorrectLetter(typedLetter))
         {
             RemoveLetter();
 
             if (IsWordComplete())
             {
-                SetCurrentWord();
+                OnWordComplete();
             }
         }
     }
 
-    private bool isCorrectLetter(string letter)
+    private bool IsCorrectLetter(string letter)
     {
         return remainingWord.IndexOf(letter) == 0;
     }
 
     private void RemoveLetter()
     {
-        string newString = remainingWord.Remove(0, 1);
-        SetRemainingWord(newString);
+        remainingWord = remainingWord.Remove(0, 1);
+        wordOutput.text = remainingWord;
     }
 
     private bool IsWordComplete()
     {
         return remainingWord.Length == 0;
+    }
+
+    private void OnWordComplete()
+    {
+        Debug.Log("Word completed: " + targetWord);
+        // You can add logic here for what happens when the word is completed.
     }
 }

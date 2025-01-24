@@ -119,54 +119,17 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &503306829
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 503306831}
-  - component: {fileID: 503306830}
-  m_Layer: 0
-  m_Name: Word Bank
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &503306830
+--- !u!114 &503306830 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 5696365431322519944, guid: 5870eb80c3ba5e04f9368be91431bf42, type: 3}
+  m_PrefabInstance: {fileID: 7666576882467401610}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 503306829}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a04e051af747fca41950ef5a7060fa81, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  originalWords:
-  - pancake
-  - cream
-  - maple
---- !u!4 &503306831
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 503306829}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -542,6 +505,63 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1367024962}
   m_CullTransparentMesh: 1
+--- !u!1001 &7666576882467401610
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3481870886459630112, guid: 5870eb80c3ba5e04f9368be91431bf42, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3481870886459630112, guid: 5870eb80c3ba5e04f9368be91431bf42, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3481870886459630112, guid: 5870eb80c3ba5e04f9368be91431bf42, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3481870886459630112, guid: 5870eb80c3ba5e04f9368be91431bf42, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3481870886459630112, guid: 5870eb80c3ba5e04f9368be91431bf42, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3481870886459630112, guid: 5870eb80c3ba5e04f9368be91431bf42, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3481870886459630112, guid: 5870eb80c3ba5e04f9368be91431bf42, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3481870886459630112, guid: 5870eb80c3ba5e04f9368be91431bf42, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3481870886459630112, guid: 5870eb80c3ba5e04f9368be91431bf42, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3481870886459630112, guid: 5870eb80c3ba5e04f9368be91431bf42, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8715964155763102511, guid: 5870eb80c3ba5e04f9368be91431bf42, type: 3}
+      propertyPath: m_Name
+      value: Word Bank
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 5870eb80c3ba5e04f9368be91431bf42, type: 3}
 --- !u!1001 &8342367943341455611
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -614,4 +634,4 @@ SceneRoots:
   - {fileID: 519420032}
   - {fileID: 1278458138}
   - {fileID: 8342367943341455611}
-  - {fileID: 503306831}
+  - {fileID: 7666576882467401610}
