@@ -17,15 +17,15 @@ public class MainMenuController : MonoBehaviour
     [Header("LevelManager Reference")]
     public LevelManager levelManager; // Drag LevelManager here in the Inspector
 
-    /*[Header("BGM")]
+    [Header("BGM")]
     [SerializeField] private AudioSource AudioBGM;
 
     [Space(10)]
-    [SerializeField] private AudioSource UIAudioSource;*/
+    [SerializeField] private AudioSource UIAudioSource;
 
     private void Awake()
     {
-        //AudioBGM.Play();
+        AudioBGM.Play();
 
         // Check if the levelManager reference is assigned
         if (levelManager == null)
@@ -45,10 +45,10 @@ public class MainMenuController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Return))
         {
-            //UIAudioSource.Play();
+            UIAudioSource.Play();
             if (PlaySpriteSelected.activeSelf)
             {
-                levelManager.Play();
+                levelManager.Play(); 
             }
 
             if (QuitSpriteSelected.activeSelf)
@@ -59,13 +59,13 @@ public class MainMenuController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.DownArrow))
         {
-            //UIAudioSource.Play();
+            UIAudioSource.Play();
             Selection = Mathf.Clamp(Selection + 1, 1, 2);
         }
 
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
-            //UIAudioSource.Play();
+            UIAudioSource.Play();
             Selection = Mathf.Clamp(Selection - 1, 1, 2);
         }
 
