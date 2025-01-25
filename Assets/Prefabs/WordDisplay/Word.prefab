@@ -479,7 +479,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: {fileID: 863902385242835136}
-  fallSpeed: 0.5
+  fallSpeed: 0.001
 --- !u!50 &-5675145558448999568
 Rigidbody2D:
   serializedVersion: 5
@@ -495,7 +495,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDamping: 0
   m_AngularDamping: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0.05
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2

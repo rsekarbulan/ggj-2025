@@ -5,8 +5,13 @@ public class DestroyBubble : MonoBehaviour
     private bool isPopped = false;
     private CircleCollider2D circleCollider;
 
+    private Health health;
+    private GameObject player;
+
     private void Start()
     {
+        player = GameObject.Find("Player");
+        health = player.GetComponent<Health>();
         circleCollider = GetComponent<CircleCollider2D>();
     }
 
@@ -15,7 +20,7 @@ public class DestroyBubble : MonoBehaviour
         if (collision.CompareTag("Destroy"))
         {
             Destroy(gameObject);
-            //reduce life
+            health.ReduceHealth();
         }
     }
 
