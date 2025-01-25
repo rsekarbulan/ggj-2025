@@ -342,7 +342,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be27082c8a80a5a4e872da10db7a5e06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  wordPrefab:
+  - {fileID: 11400000, guid: 3001500e87f17f947b1538e8ce1d4411, type: 2}
+  wordCanvas: {fileID: 0}
   words: []
+  characters: 
   wordSpawner: {fileID: 1319056301}
 --- !u!114 &1319056300
 MonoBehaviour:
@@ -369,8 +373,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70e8ad35a386e204caea73ee43d5ce26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wordPrefab: {fileID: 8342678731867779127, guid: b2611f5d8e2f4bb45a0357b42fdefa38, type: 3}
-  wordCanvas: {fileID: 1509886732}
 --- !u!114 &1319056302
 MonoBehaviour:
   m_ObjectHideFlags: 0

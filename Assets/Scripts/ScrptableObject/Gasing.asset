@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f7efcf9ff7070043aec850836441642, type: 3}
+  m_Name: Gasing
+  m_EditorClassIdentifier: 
+  bubbleSprite: {fileID: -2936636794373932723, guid: e368c619c6c62804891463af4bd2bc99, type: 3}
+  popSprite: {fileID: 1784166102432735849, guid: fc71da7280b03ff4cad4dff575dc76e3, type: 3}
+  popParticle: {fileID: 0}
+  objectPrefab: {fileID: 8342678731867779127, guid: b2611f5d8e2f4bb45a0357b42fdefa38, type: 3}
+  objectName: gasing
