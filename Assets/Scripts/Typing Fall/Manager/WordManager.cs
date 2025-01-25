@@ -20,7 +20,7 @@ public class WordManager : MonoBehaviour
         //WordDisplay wordDisplay = wordSpawner.SpawnWord();
 
         Word word = new Word(WordGenerator.GetRandomWord(), wordSpawner.SpawnWord());
-        Debug.Log(word.word);
+        //Debug.Log(word.word);
 
         words.Add(word);
     }
