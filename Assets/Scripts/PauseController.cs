@@ -55,10 +55,13 @@ public class PauseController : MonoBehaviour
     [Header("Menu")]
     public GameObject Menu;
 
+    [Space(10)]
+    [Header("BGMAudio")]
+    [SerializeField] private AudioSource BGMAudioSource;
 
-    /*[Space(10)]
-    [Header("Audio")]*/
-    //[SerializeField] private AudioSource UIAudioSource;
+    [Space(10)]
+    [Header("Audio")]
+    [SerializeField] private AudioSource UIAudioSource;
 
     private void Awake()
     {
@@ -86,7 +89,7 @@ public class PauseController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            //UIAudioSource.Play();
+            UIAudioSource.Play();
             if (GamePaused)
             {
                 Resume();
@@ -100,10 +103,9 @@ public class PauseController : MonoBehaviour
         // Input handling for arrow outside the pause block
         if (GamePaused)
         {
-
             if (Input.GetKeyDown(KeyCode.Return))
             {
-                //UIAudioSource.Play();
+                UIAudioSource.Play();
 
                 if (PlaySpriteSelected.activeSelf)
                 {
@@ -124,7 +126,7 @@ public class PauseController : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.DownArrow))
             {
-                //UIAudioSource.Play();
+                UIAudioSource.Play();
                 Debug.Log("arrow bawah");
 
                 if (Selection <= 3)
@@ -140,7 +142,7 @@ public class PauseController : MonoBehaviour
 
             if (Input.GetKeyDown(KeyCode.UpArrow))
             {
-                //UIAudioSource.Play();
+                UIAudioSource.Play();
                 Debug.Log("arrow atas");
 
                 if (Selection >= 1)
@@ -188,6 +190,8 @@ public class PauseController : MonoBehaviour
 
     void Resume()
     {
+        BGMAudioSource.volume = 0.25f;
+
         //playerInput.enabled = true;
         playerMovement.enabled = true;
 
@@ -210,6 +214,8 @@ public class PauseController : MonoBehaviour
 
     void Pause()
     {
+        BGMAudioSource.volume = 0.1f;
+
         //playerInput.enabled = false;
         playerMovement.enabled = false;
 

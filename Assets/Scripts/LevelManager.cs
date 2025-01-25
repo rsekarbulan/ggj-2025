@@ -1,14 +1,12 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {
-
-
-
     public void Play()
     {
-        SceneManager.LoadScene("Rafli");
+        StartCoroutine(Load("FallingBubbles"));
     }
 
     public void Quit()
@@ -19,6 +17,12 @@ public class LevelManager : MonoBehaviour
 
     public void MainMenu()
     {
-        SceneManager.LoadScene("MainMenu");
+        StartCoroutine(Load("MainMenu"));
+    }
+
+    IEnumerator Load(string sceneName)
+    {
+        yield return new WaitForSeconds(0.5f);
+        SceneManager.LoadScene(sceneName);
     }
 }
