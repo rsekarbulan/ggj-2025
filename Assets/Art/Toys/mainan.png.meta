@@ -334,7 +334,16 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      mainan_0: 1541840549586224655
+      mainan_1: 1348248482530135170
+      mainan_2: -3928503311617232082
+      mainan_3: -8977076073506115878
+      mainan_4: -7739826509279969944
+      mainan_5: -4644137937779421787
+      mainan_6: 7755929259668259743
+      mainan_7: -5365301364339345331
+      mainan_8: 156449194798336616
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
