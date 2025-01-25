@@ -16,6 +16,10 @@ public class SpriteChanger : MonoBehaviour
 
         spriteRenderer.sprite = bubbleWithToy; // Atur sprite awal sebagai gelembung
     }
+    public void CompleteWord(Sprite target) 
+    {
+        spriteRenderer.sprite = target;
+    }
 
     // Dipanggil ketika kata sudah selesai diisi
     public void CompleteWord()

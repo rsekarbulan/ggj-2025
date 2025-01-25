@@ -9,6 +9,8 @@ public class WordDisplay : MonoBehaviour
     private SpriteChanger spriteChanger; // Referensi ke SpriteChanger
     private ColliderManager colliderManager; // Referensi ke ColliderManager
 
+    public Words words;
+
     private void Start()
     {
         // Mencoba mendapatkan komponen SpriteChanger dari child GameObject
@@ -60,7 +62,7 @@ public class WordDisplay : MonoBehaviour
         // Tidak langsung destroy, ubah sprite terlebih dahulu
         if (spriteChanger != null)
         {
-            spriteChanger.CompleteWord();
+            spriteChanger.CompleteWord(words.wordSprite);
         }
     }
 
@@ -75,7 +77,7 @@ public class WordDisplay : MonoBehaviour
 
         if (spriteChanger != null)
         {
-            spriteChanger.CompleteWord();
+            spriteChanger.CompleteWord(words.wordSprite);
         }
 
         // Aktifkan penghancuran collider saat kata selesai

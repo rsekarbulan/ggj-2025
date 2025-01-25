@@ -7,17 +7,21 @@ public class Word
 
 
     public string word;
+    public Words words;
 
     private int typeIndex;
 
     WordDisplay display;
 
-    public Word(string _word, WordDisplay _display)
+    public Word(Words _word, WordDisplay _display)
     {
-        word = _word;
+        words = _word;
+        word = words.wordLetter;
+
         typeIndex = 0;
         display = _display;
-        display.SetWord(word);
+        display.SetWord(word);  
+        display.words = _word;
     }
 
     public char GetNextLetter()
