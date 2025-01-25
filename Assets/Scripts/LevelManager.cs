@@ -4,9 +4,11 @@ using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {
+    [SerializeField] private string game;
+
     public void Play()
     {
-        StartCoroutine(Load("FallingBubbles"));
+        StartCoroutine(Load(game));
     }
 
     public void Quit()
