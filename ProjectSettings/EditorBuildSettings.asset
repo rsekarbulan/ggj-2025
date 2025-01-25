@@ -6,14 +6,11 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/BasicTyping.unity
-    guid: 8c9cfa26abfee488c85f1582747f6a02
-  - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: f37a1b6b56877d64c9a30a80e981fbf6
   - enabled: 1
-    path: Assets/Scenes/FallingBubbles.unity
-    guid: 331a978beec5749449aa367d14b20cb3
+    path: Assets/Scenes/LivesTrial.unity
+    guid: 85ce2f4ef7d395e49b1766682129b483
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
