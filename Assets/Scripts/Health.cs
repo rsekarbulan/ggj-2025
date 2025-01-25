@@ -25,7 +25,9 @@ public class Health : MonoBehaviour
             }
             else
             {
-                hearts[i].sprite = emptyHearts;
+                Color temp = hearts[i].color;
+                temp.a = 0f;
+                hearts[i].color = temp;
             }
 
             if (i < numOfHearts)
