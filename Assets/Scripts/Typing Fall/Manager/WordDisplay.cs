@@ -7,6 +7,7 @@ public class WordDisplay : MonoBehaviour
     public TMP_Text text; // Ganti dengan TMP_Text
     public float fallSpeed = 0.5f;
     private SpriteChanger spriteChanger; // Referensi ke SpriteChanger
+    private ColliderManager colliderManager; // Referensi ke ColliderManager
 
     private void Start()
     {
@@ -21,6 +22,19 @@ public class WordDisplay : MonoBehaviour
         else
         {
             Debug.LogWarning("SpriteChanger TIDAK ditemukan pada child GameObject. Pastikan komponen terpasang.");
+        }
+
+        // Mencoba mendapatkan komponen ColliderManager
+        colliderManager = GetComponentInChildren<ColliderManager>();
+
+        // Debugging apakah colliderManager berhasil diambil atau tidak
+        if (colliderManager != null)
+        {
+            Debug.Log("ColliderManager ditemukan pada GameObject.");
+        }
+        else
+        {
+            Debug.LogWarning("ColliderManager TIDAK ditemukan pada GameObject. Pastikan komponen terpasang.");
         }
     }
 
@@ -58,9 +72,16 @@ public class WordDisplay : MonoBehaviour
     private void CompleteWord()
     {
         Debug.Log("Word completed and triggering sprite change."); // Debug log untuk metode CompleteWord
+
         if (spriteChanger != null)
         {
             spriteChanger.CompleteWord();
+        }
+
+        // Aktifkan penghancuran collider saat kata selesai
+        if (colliderManager != null)
+        {
+            colliderManager.EnableDestruction();
         }
     }
 }
