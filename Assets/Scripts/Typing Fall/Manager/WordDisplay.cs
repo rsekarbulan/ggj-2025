@@ -1,6 +1,7 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using static System.Net.Mime.MediaTypeNames;
 
 public class WordDisplay : MonoBehaviour
 {
@@ -15,27 +16,27 @@ public class WordDisplay : MonoBehaviour
         spriteChanger = GetComponentInChildren<SpriteChanger>();
 
         // Debugging apakah spriteChanger berhasil diambil atau tidak
-        if (spriteChanger != null)
+        /*if (spriteChanger != null)
         {
             Debug.Log("SpriteChanger ditemukan pada child GameObject.");
         }
         else
         {
             Debug.LogWarning("SpriteChanger TIDAK ditemukan pada child GameObject. Pastikan komponen terpasang.");
-        }
+        }*/
 
         // Mencoba mendapatkan komponen ColliderManager
         colliderManager = GetComponentInChildren<ColliderManager>();
 
         // Debugging apakah colliderManager berhasil diambil atau tidak
-        if (colliderManager != null)
+        /*if (colliderManager != null)
         {
             Debug.Log("ColliderManager ditemukan pada GameObject.");
         }
         else
         {
             Debug.LogWarning("ColliderManager TIDAK ditemukan pada GameObject. Pastikan komponen terpasang.");
-        }
+        }*/
     }
 
     public void SetWord(string word)
@@ -50,7 +51,7 @@ public class WordDisplay : MonoBehaviour
 
         if (string.IsNullOrEmpty(text.text)) // Jika kata selesai
         {
-            Debug.Log($"Kata '{text.text}' selesai!"); // Debug log saat kata selesai
+            //Debug.Log($"Kata '{text.text}' selesai!"); // Debug log saat kata selesai
             CompleteWord();
         }
     }
@@ -66,12 +67,12 @@ public class WordDisplay : MonoBehaviour
 
     private void Update()
     {
-        transform.Translate(0f, -fallSpeed * Time.deltaTime, 0f);
+
     }
 
-    private void CompleteWord()
+    public void CompleteWord()
     {
-        Debug.Log("Word completed and triggering sprite change."); // Debug log untuk metode CompleteWord
+        //Debug.Log("Word completed and triggering sprite change."); // Debug log untuk metode CompleteWord
 
         if (spriteChanger != null)
         {
@@ -84,4 +85,5 @@ public class WordDisplay : MonoBehaviour
             colliderManager.EnableDestruction();
         }
     }
+
 }

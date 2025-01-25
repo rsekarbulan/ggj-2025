@@ -7,10 +7,8 @@ public class Word
 
 
     public string word;
-
     private int typeIndex;
-
-    WordDisplay display;
+    private WordDisplay display;
 
     public Word(string _word, WordDisplay _display)
     {
@@ -29,14 +27,15 @@ public class Word
     {
         typeIndex++;
         display.RemoveLetter();
+
+        if (typeIndex >= word.Length)
+        {
+            display.CompleteWord();
+        }
     }
 
     public bool WordTyped()
     {
-        bool wordTyped = (typeIndex >= word.Length);
-        if (wordTyped) {
-            display.RemoveWord();  
-        }
-        return wordTyped;
+        return typeIndex >= word.Length;
     }
 }   

@@ -385,8 +385,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe14ada75e2099d4cb7004892241e901, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  wordDelay: 1
   wordManager: {fileID: 1319056299}
-  wordDelay: 5
 --- !u!1 &1509886728
 GameObject:
   m_ObjectHideFlags: 0
@@ -721,7 +721,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!61 &1920710105
 BoxCollider2D:
   m_ObjectHideFlags: 0

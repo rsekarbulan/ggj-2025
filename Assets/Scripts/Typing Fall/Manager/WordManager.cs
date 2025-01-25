@@ -14,15 +14,18 @@ public class WordManager : MonoBehaviour
 
 
     private bool hasActiveWord;
+    private bool isLocked = false; // Status apakah objek terkunci
     private Word activeWord;
 
     public WordSpawner wordSpawner;
 
-    string objectWord;
+    private GameObject activeWordObj;
+    private string objectWord;
     private int typeIndex;
-    ObjectDataSO objectDataSO;
-    WordDisplay wordDisplay;
-    public GameObject wordObj {get ; private set;}
+    private ObjectDataSO objectDataSO;
+    private WordDisplay wordDisplay;
+
+    public GameObject wordObj { get; private set; }
 
     private void Awake()
     {
@@ -34,49 +37,72 @@ public class WordManager : MonoBehaviour
         Vector3 randomPosition = new Vector3(Random.Range(-8.45f, 8.39f), 7f);
         int randomObject = Random.Range(0, wordPrefab.Length);
 
-        wordObj = Instantiate(wordPrefab[randomObject].objectPrefab, randomPosition, Quaternion.identity, wordCanvas);
-        wordObj.GetComponentInChildren<SpriteRenderer>().sprite = wordPrefab[randomObject].bubbleSprite;
+        GameObject newWordObj = Instantiate(wordPrefab[randomObject].objectPrefab, randomPosition, Quaternion.identity, wordCanvas);
+        newWordObj.GetComponentInChildren<SpriteRenderer>().sprite = wordPrefab[randomObject].bubbleSprite;
 
-        objectWord = wordPrefab[randomObject].objectName;
-        wordDisplay = wordObj.GetComponent<WordDisplay>();
-        wordDisplay.text.text = wordPrefab[randomObject].objectName;
+        string newObjectWord = wordPrefab[randomObject].objectName;
 
-        objectDataSO = wordPrefab[randomObject];
-
-        hasActiveWord = true;
+        // Tambahkan ke daftar kata jika belum terkunci
+        if (!isLocked && !hasActiveWord)
+        {
+            SetActiveWord(newWordObj, wordPrefab[randomObject], newObjectWord);
+            Debug.Log(newObjectWord, newWordObj);
+        }
     }
 
-        
-    public void TypeLetter (char letter)
+    private void SetActiveWord(GameObject wordObj, ObjectDataSO dataSO, string word)
     {
-        if (hasActiveWord) {
-            if (objectWord[typeIndex] == letter) {
-                typeIndex++;
-                wordDisplay.RemoveLetter();
-                if (typeIndex >= objectWord.Length)
-                {
-                    Debug.Log("TYping correct");
-                    hasActiveWord=false;
-                    wordObj.GetComponentInChildren<SpriteRenderer>().sprite = objectDataSO.popSprite;
-                    typeIndex = 0;
+        hasActiveWord = true;        // Menandai bahwa ada objek aktif
+        activeWordObj = wordObj;     // Menetapkan objek aktif
+        objectDataSO = dataSO;       // Menyimpan data objek
+        objectWord = word;           // Menyimpan kata dari objek
+        typeIndex = 0;               // Mengatur ulang indeks huruf
 
-                    return;
-                }
-            }
+        wordDisplay = activeWordObj.GetComponent<WordDisplay>();
+        if (wordDisplay != null)
+        {
+            // Menampilkan teks dari objectName
+            wordDisplay.text.text = objectWord;
         }
         else
         {
-            foreach (Word word in words) {
-                if (word.GetNextLetter() == letter) {
-                    activeWord = word;
-                    hasActiveWord = true;
-                    word.TypeLetter();
-                    break;
-                }
-            }
+            Debug.LogError("WordDisplay component not found on prefab.");
+        }
+    }
+
+    public void TypeLetter(char letter)
+    {
+        // Abaikan huruf jika tidak ada objek aktif
+        if (!hasActiveWord)
+        {
+            Debug.LogWarning("No active word to type.");
+            return;
         }
 
+        // Mengunci fokus setelah huruf pertama diketik
+        isLocked = true;
 
+        // Proses huruf untuk objek aktif
+        if (objectWord[typeIndex] == letter)
+        {
+            typeIndex++;
+            wordDisplay.RemoveLetter();
+
+            // Jika kata selesai diketik
+            if (typeIndex >= objectWord.Length)
+            {
+                Debug.Log("Typing correct");
+                activeWordObj.GetComponentInChildren<SpriteRenderer>().sprite = objectDataSO.popSprite;
+                Destroy(activeWordObj, 1f); // Hapus objek aktif dengan delay
+
+                // Reset state
+                hasActiveWord = false;
+                isLocked = false; // Membuka kunci untuk objek berikutnya
+                activeWordObj = null;
+                objectWord = null;
+            }
+        }
     }
+
 
 }
