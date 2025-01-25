@@ -3,13 +3,24 @@ using UnityEngine;
 public class DestroyBubble : MonoBehaviour
 {
     private bool isPopped = false;
+    private CircleCollider2D circleCollider;
+
+    private Health health;
+    private GameObject player;
+
+    private void Start()
+    {
+        player = GameObject.Find("Player");
+        health = player.GetComponent<Health>();
+        circleCollider = GetComponent<CircleCollider2D>();
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Destroy"))
         {
             Destroy(gameObject);
-            //reduce life
+            health.ReduceHealth();
         }
     }
 
@@ -23,8 +34,7 @@ public class DestroyBubble : MonoBehaviour
             }
             else
             {
-                Destroy(gameObject);
-                //reduce life
+                circleCollider.isTrigger = true;
             }
         }
     }
