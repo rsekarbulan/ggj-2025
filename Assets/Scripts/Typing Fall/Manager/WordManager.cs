@@ -4,33 +4,63 @@ using System.Collections.Generic;
 
 public class WordManager : MonoBehaviour
 {
+    public static WordManager instance;
+
+    public ObjectDataSO[] wordPrefab;
+    public Transform wordCanvas;
+
     public List<Word> words;
+    public List<char> characters;
 
 
     private bool hasActiveWord;
     private Word activeWord;
 
-    public WordSpawner wordSpawner; 
+    public WordSpawner wordSpawner;
 
-    
+    string objectWord;
+    private int typeIndex;
+    ObjectDataSO objectDataSO;
+    WordDisplay wordDisplay;
+    public GameObject wordObj {get ; private set;}
+
+    private void Awake()
+    {
+        instance = this;
+    }
 
     public void AddWord()
     {
+        Vector3 randomPosition = new Vector3(Random.Range(-8.45f, 8.39f), 7f);
+        int randomObject = Random.Range(0, wordPrefab.Length);
 
-        //WordDisplay wordDisplay = wordSpawner.SpawnWord();
+        wordObj = Instantiate(wordPrefab[randomObject].objectPrefab, randomPosition, Quaternion.identity, wordCanvas);
+        wordObj.GetComponentInChildren<SpriteRenderer>().sprite = wordPrefab[randomObject].bubbleSprite;
 
         Word word = new Word(WordGenerator.Instance.GetRandomWord(), wordSpawner.SpawnWord());
         //Debug.Log(word.word);
 
-        words.Add(word);
+        objectDataSO = wordPrefab[randomObject];
+
+        hasActiveWord = true;
     }
 
-
+        
     public void TypeLetter (char letter)
     {
         if (hasActiveWord) {
-            if (activeWord.GetNextLetter() == letter) {
-                activeWord.TypeLetter();
+            if (objectWord[typeIndex] == letter) {
+                typeIndex++;
+                wordDisplay.RemoveLetter();
+                if (typeIndex >= objectWord.Length)
+                {
+                    Debug.Log("TYping correct");
+                    hasActiveWord=false;
+                    wordObj.GetComponentInChildren<SpriteRenderer>().sprite = objectDataSO.popSprite;
+                    typeIndex = 0;
+
+                    return;
+                }
             }
         }
         else
@@ -45,11 +75,6 @@ public class WordManager : MonoBehaviour
             }
         }
 
-        if(hasActiveWord && activeWord.WordTyped())
-        {
-            hasActiveWord = false;
-            words.Remove(activeWord);
-        }
 
     }
 
