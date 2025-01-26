@@ -31,8 +31,15 @@ public class Word
 
     public void TypeLetter()
     {
-        typeIndex++;
-        display.RemoveLetter();
+        if (typeIndex < word.Length)
+        {
+            display.RemoveLetter();
+            typeIndex++;
+        }
+        else
+        {
+            Debug.Log($"TypeLetter called but typeIndex ({typeIndex}) is out of bounds for word: '{word}'");
+        }
     }
 
     public bool WordTyped()

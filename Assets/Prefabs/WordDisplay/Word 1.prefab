@@ -323,7 +323,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: {fileID: 3326755271228999731}
-  fallSpeed: 0.9
+  fallSpeed: 2
   words:
     wordLetter: 
     sprite1: {fileID: 0}
