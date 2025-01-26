@@ -10,6 +10,9 @@ public class Health : MonoBehaviour
     public Sprite fullHearts;
     public Sprite emptyHearts;
 
+    [SerializeField] public GameObject loseCanvas;
+
+
     private void Update()
     {
         if (health > numOfHearts)
@@ -39,18 +42,15 @@ public class Health : MonoBehaviour
                 hearts[i].enabled = false;
             }
         }
+
+        if (health == 0)
+        {
+            loseCanvas.SetActive(true);
+        }
     }
 
     public void ReduceHealth()
     {
         health--;
-    }
-
-    public void GameOver()
-    {
-        if (health == 0)
-        {
-            Debug.Log("game over");
-        }
     }
 }

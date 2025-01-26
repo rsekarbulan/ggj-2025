@@ -300,7 +300,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9853d3ba2e5ab5d49b27aeb5f8ae3cfe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  game: LivesTrial
+  game: Final
 --- !u!1 &214139365
 GameObject:
   m_ObjectHideFlags: 0

@@ -9,8 +9,8 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: f37a1b6b56877d64c9a30a80e981fbf6
   - enabled: 1
-    path: Assets/Scenes/LivesTrial.unity
-    guid: 85ce2f4ef7d395e49b1766682129b483
+    path: Assets/Scenes/Final.unity
+    guid: fb53b55282ab76a4fb44641ba413bb5f
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0

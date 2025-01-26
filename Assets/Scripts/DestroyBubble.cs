@@ -16,7 +16,7 @@ public class DestroyBubble : MonoBehaviour
             //Debug.Log("Player found: " + player.name);
 
             // Cek apakah komponen Health ditemukan pada Player
-            //health = player.GetComponent<Health>();
+            health = player.GetComponent<Health>();
             if (health != null)
             {
                 //Debug.Log("Health component found on Player.");
@@ -50,6 +50,7 @@ public class DestroyBubble : MonoBehaviour
         {
             //Debug.Log("Object collided with 'Destroy' tag.");
             Destroy(transform.parent.gameObject);
+            health.ReduceHealth();
             //Debug.Log("Parent object destroyed.");
         }
     }

@@ -20,7 +20,7 @@ public class Word
 
         typeIndex = 0;
         display = _display;
-        display.SetWord(word);  
+        display.SetWord(word);
         display.words = _word;
     }
 
@@ -70,4 +70,4 @@ public class Word
         }
         return display.gameObject;
     }
-}   
+}
