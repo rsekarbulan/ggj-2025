@@ -148,12 +148,12 @@ TextureImporter:
       name: Export UI Win Lose Condition_0
       rect:
         serializedVersion: 2
-        x: 334
-        y: 830
-        width: 355
-        height: 312
+        x: 128
+        y: 820
+        width: 850
+        height: 322
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -170,12 +170,12 @@ TextureImporter:
       name: Export UI Win Lose Condition_1
       rect:
         serializedVersion: 2
-        x: 1751
-        y: 1102
-        width: 208
-        height: 114
+        x: 1520
+        y: 813
+        width: 667
+        height: 403
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -189,270 +189,6 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Export UI Win Lose Condition_2
-      rect:
-        serializedVersion: 2
-        x: 1761
-        y: 1058
-        width: 188
-        height: 33
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 8a7663dcafc7d18c0800000000000000
-      internalID: -4026925075172792408
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Export UI Win Lose Condition_3
-      rect:
-        serializedVersion: 2
-        x: 138
-        y: 830
-        width: 89
-        height: 114
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 01fcf1ac93ce9a860800000000000000
-      internalID: 7541818783956979472
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Export UI Win Lose Condition_4
-      rect:
-        serializedVersion: 2
-        x: 230
-        y: 830
-        width: 101
-        height: 112
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: b5bd9834222e5f9d0800000000000000
-      internalID: -2741036161395205285
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Export UI Win Lose Condition_5
-      rect:
-        serializedVersion: 2
-        x: 683
-        y: 830
-        width: 118
-        height: 112
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: da1745733da2d3f70800000000000000
-      internalID: 9168531503050944941
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Export UI Win Lose Condition_6
-      rect:
-        serializedVersion: 2
-        x: 803
-        y: 830
-        width: 78
-        height: 113
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 63eaebc0b45e4b530800000000000000
-      internalID: 3869970090317229622
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Export UI Win Lose Condition_7
-      rect:
-        serializedVersion: 2
-        x: 884
-        y: 830
-        width: 85
-        height: 112
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 2462e12724011f2c0800000000000000
-      internalID: -4399717483395799486
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Export UI Win Lose Condition_8
-      rect:
-        serializedVersion: 2
-        x: 1539
-        y: 830
-        width: 85
-        height: 112
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 2245dd25be5ee1c00800000000000000
-      internalID: 873388176626766882
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Export UI Win Lose Condition_9
-      rect:
-        serializedVersion: 2
-        x: 1627
-        y: 830
-        width: 89
-        height: 113
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 106f234a5c8462c10800000000000000
-      internalID: 2028388695877547521
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Export UI Win Lose Condition_10
-      rect:
-        serializedVersion: 2
-        x: 1719
-        y: 830
-        width: 99
-        height: 113
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 2ac0dd0122fb1f950800000000000000
-      internalID: 6481171491795569826
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Export UI Win Lose Condition_11
-      rect:
-        serializedVersion: 2
-        x: 1873
-        y: 830
-        width: 145
-        height: 113
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 330b011895b6e4960800000000000000
-      internalID: 7588120454327480371
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Export UI Win Lose Condition_12
-      rect:
-        serializedVersion: 2
-        x: 2021
-        y: 831
-        width: 45
-        height: 111
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 9aca6ad0faec635a0800000000000000
-      internalID: -6541814157465441111
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Export UI Win Lose Condition_13
-      rect:
-        serializedVersion: 2
-        x: 2069
-        y: 831
-        width: 100
-        height: 112
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 4dfb75a95dc5b4180800000000000000
-      internalID: -9130101747076317228
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: Export UI Win Lose Condition_14
       rect:
         serializedVersion: 2
@@ -461,7 +197,7 @@ TextureImporter:
         width: 377
         height: 162
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -483,7 +219,7 @@ TextureImporter:
         width: 377
         height: 162
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -500,7 +236,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 1bb274458b62d8f4e91965c57a211c18
     internalID: 0
     vertices: []
     indices: 
@@ -509,7 +245,11 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Export UI Win Lose Condition_0: 6241004216639019749
+      Export UI Win Lose Condition_1: 8203749430959633043
+      Export UI Win Lose Condition_14: 4270217283302917972
+      Export UI Win Lose Condition_15: -5752775079979593154
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
