@@ -9,16 +9,17 @@ public class ColliderManager : MonoBehaviour
     private bool isPopped = false; // Status apakah objek sudah "pecah"
 
     private WinCondition winCondition; // Referensi ke WinCondition
-
-    private CircleCollider2D circleCollider;
     private Health health;
     private GameObject player;
+    private CircleCollider2D circleCollider;
 
     private void Start()
     {
         // Inisialisasi collider jika belum diassign
         if (collider2D == null)
+        {
             collider2D = GetComponent<Collider2D>();
+        }
 
         // Mencari Player di scene
         player = GameObject.Find("Player");
@@ -61,45 +62,108 @@ public class ColliderManager : MonoBehaviour
     {
         Debug.Log($"OnTriggerEnter2D with {other.gameObject.name}, wordCompleted: {wordCompleted}");
 
-        if (other.CompareTag(playerTag) && CompareTag("Toy"))
-    {
-        // Periksa apakah worldCompleted bernilai true
-        if (wordCompleted)
-        {
-            Debug.Log("Toy collected by Player!");
-
-            // Tambahkan poin menggunakan Singleton WinCondition
-            WinCondition.AddToy();
-
-            // Hancurkan objek setelah dikoleksi
-        if (other.CompareTag(destroyTag) && !gameObject.CompareTag("Stone"))
-        {
-            DestroyParentOrSelf();
-            health.ReduceHealth();
-        }
-
         if (other.CompareTag(playerTag))
         {
-            if (gameObject.CompareTag("Stone"))
+            if (CompareTag("Toy"))
             {
-                health.ReduceHealth();
+                if (wordCompleted)
+                {
+                    Debug.Log("Toy collected by Player!");
+
+                    // Tambahkan poin menggunakan Singleton WinCondition
+                    if (winCondition != null)
+                    {
+                        winCondition.AddToy();
+                    }
+
+                    // Hancurkan objek setelah dikoleksi
+                    DestroyParentOrSelf();
+                }
+                else
+                {
+                    Debug.LogWarning("Cannot collect toy. World is not completed!");
+                }
+            }
+
+            if (CompareTag("Stone"))
+            {
+                health?.ReduceHealth();
             }
         }
-        else
-        {
-            Debug.LogWarning("Cannot collect toy. World is not completed!");
-        }
-    }
 
-    if (other.CompareTag(destroyTag))
-    {
-        DestroyParentOrSelf();
-    }
+        if (CompareTag("Pendopo")) // Kondisi untuk tag Pendopo
+        {
+            if (wordCompleted) // Jika jawaban sudah diberikan
+            {
+                Debug.Log("Player completed the Pendopo interaction!");
+
+                if (winCondition != null)
+                {
+                    winCondition.TriggerWin(); // Langsung memicu kondisi kemenangan
+                }
+            }
+            else
+            {
+                Debug.LogWarning("Player cannot complete Pendopo without answering!");
+            }
+        }
+
+        if (other.CompareTag(destroyTag))
+        {
+            DestroyParentOrSelf();
+            health?.ReduceHealth();
+        }
     }
 
     private void OnTriggerStay2D(Collider2D other)
     {
         Debug.Log($"OnTriggerStay2D with {other.gameObject.name}, wordCompleted: {wordCompleted}");
+
+        if (other.CompareTag(playerTag))
+        {
+            if (CompareTag("Toy"))
+            {
+                if (wordCompleted)
+                {
+                    Debug.Log("Toy collected by Player!");
+
+                    // Tambahkan poin menggunakan Singleton WinCondition
+                    if (winCondition != null)
+                    {
+                        winCondition.AddToy();
+                    }
+
+                    // Hancurkan objek setelah dikoleksi
+                    DestroyParentOrSelf();
+                }
+                else
+                {
+                    Debug.LogWarning("Cannot collect toy. World is not completed!");
+                }
+            }
+
+            if (CompareTag("Stone"))
+            {
+                health?.ReduceHealth();
+            }
+        }
+
+        if (CompareTag("Pendopo")) // Kondisi untuk tag Pendopo
+        {
+            if (wordCompleted) // Jika jawaban sudah diberikan
+            {
+                Debug.Log("Player completed the Pendopo interaction!");
+
+                if (winCondition != null)
+                {
+                    winCondition.TriggerWin(); // Langsung memicu kondisi kemenangan
+                }
+            }
+            else
+            {
+                Debug.LogWarning("Player cannot complete Pendopo without answering!");
+            }
+        }
 
         if (wordCompleted && other.CompareTag(playerTag))
         {

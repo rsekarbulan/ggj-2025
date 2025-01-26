@@ -21,7 +21,7 @@ public class WinCondition : MonoBehaviour
     }
 
     // Method untuk menambah skor
-    public static void AddToy()
+    public void AddToy()
     {
         toysCollected++;
         Debug.Log($"Toys Collected: {toysCollected}");
@@ -45,7 +45,7 @@ public class WinCondition : MonoBehaviour
     {
         if (scoreText != null)
         {
-            scoreText.text = $"Toys Collected: {toysCollected}/{winScore}";
+            scoreText.text = $" {toysCollected}/{winScore}";
         }
     }
 
@@ -68,5 +68,20 @@ public class WinCondition : MonoBehaviour
         UpdateScoreText();
 
         Debug.Log("Game Reset: Score has been reset.");
+    }
+
+    public void TriggerWin()
+    {
+        Debug.Log("Triggering win condition directly!");
+
+        // Tampilkan panel kemenangan
+        if (winPanel != null)
+        {
+            winPanel.SetActive(true);
+            Time.timeScale = 0; // Pause game
+        }
+
+        // Reset skor dan perbarui UI
+        ResetGame();
     }
 }
