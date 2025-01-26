@@ -43,4 +43,14 @@ public class Word
         }
         return wordTyped;
     }
+
+    public GameObject GetGameObject()
+    {
+        // Check if display is null or the associated GameObject is destroyed
+        if (display == null || display.gameObject == null)
+        {
+            return null;
+        }
+        return display.gameObject;
+    }
 }   

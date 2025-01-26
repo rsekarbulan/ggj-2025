@@ -96,6 +96,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4367264662ede884f905f7d5b68835cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  collider2D: {fileID: 8118807986387899492}
+  playerTag: Destroy
 --- !u!1 &6785715294348052187
 GameObject:
   m_ObjectHideFlags: 0

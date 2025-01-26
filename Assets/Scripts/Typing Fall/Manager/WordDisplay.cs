@@ -60,7 +60,7 @@ public class WordDisplay : MonoBehaviour
         }
 
         // Hancurkan objek setelah efek partikel selesai (opsional)
-        Destroy(gameObject, particleSystem.main.duration);
+        //Destroy(gameObject, particleSystem.main.duration);
     }
 
     private void Update()

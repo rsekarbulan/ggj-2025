@@ -25,36 +25,89 @@ public class WordManager : MonoBehaviour
         words.Add(word);
     }
 
-
-    public void TypeLetter(char letter)
+    private void ResetActiveWord()
     {
-        if (hasActiveWord)
+        if (activeWord != null)
         {
-            if (activeWord.GetNextLetter() == letter)
-            {
-                activeWord.TypeLetter();
-            }
+            Debug.Log($"Resetting active letter: {activeWord.word}");
         }
         else
         {
-            foreach (Word word in words)
+            Debug.Log("Resetting active letter: null or already destroyed");
+        }
+
+        activeWord = null;
+        hasActiveWord = false;
+    }
+
+    private void Update()
+    {
+        Debug.Log($"Has Active Word: {hasActiveWord}");
+
+        // Check if activeWord's associated GameObject is null or destroyed
+        if (hasActiveWord)
+        {
+            var activeWordGameObject = activeWord?.GetGameObject();
+            if (activeWord == null || activeWordGameObject == null)
             {
-                if (word.GetNextLetter() == letter)
-                {
-                    activeWord = word;
-                    hasActiveWord = true;
-                    word.TypeLetter();
-                    break;
-                }
+                Debug.Log("Active word's GameObject is destroyed or null. Resetting active word.");
+                ResetActiveWord();
+                return;
+            }
+            else
+            {
+                Debug.Log($"Active word's GameObject is: {activeWordGameObject.name}");
             }
         }
 
-        if (hasActiveWord && activeWord.WordTyped())
+        // Handle typing logic
+        if (Input.anyKeyDown)
         {
-            hasActiveWord = false;
-            words.Remove(activeWord);
-        }
+            char letter = Input.inputString.Length > 0 ? Input.inputString[0] : '\0';
 
+            if (letter != '\0')
+            {
+                Debug.Log($"Key pressed: {letter}");
+
+                if (hasActiveWord)
+                {
+                    if (activeWord.GetNextLetter() == letter)
+                    {
+                        Debug.Log($"Typing letter: {letter} on active word: {activeWord.word} ({activeWord.GetGameObject()?.name ?? "GameObject destroyed"})");
+
+                        activeWord.TypeLetter();
+
+                        if (activeWord.WordTyped())
+                        {
+                            Debug.Log($"Word '{activeWord.word}' completed. Removing and resetting.");
+                            words.Remove(activeWord);
+                            ResetActiveWord();
+                        }
+                    }
+                    else
+                    {
+                        Debug.Log($"Letter '{letter}' does not match the next letter of active word: {activeWord.word}");
+                    }
+                }
+                else
+                {
+                    Debug.Log("No active word. Searching for a word to activate.");
+
+                    foreach (Word word in words)
+                    {
+                        Debug.Log($"Checking word: {word.word} ({word.GetGameObject()?.name ?? "GameObject destroyed"})");
+
+                        if (word.GetNextLetter() == letter)
+                        {
+                            activeWord = word;
+                            hasActiveWord = true;
+                            Debug.Log($"New active word set: {word.word} ({activeWord.GetGameObject()?.name ?? "GameObject destroyed"})");
+                            word.TypeLetter();
+                            break;
+                        }
+                    }
+                }
+            }
+        }    
     }
-
 }
