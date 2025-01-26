@@ -5,7 +5,7 @@ public class WordTimer : MonoBehaviour
 
     public WordManager wordManager;
 
-    public float wordDelay = 1.5f; // Tetap konstan
+    public float wordDelay = 0.0001f; // Tetap konstan
     private float nextWordTime = 0f;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created

@@ -37,11 +37,12 @@ public class Word
 
     public bool WordTyped()
     {
-        bool wordTyped = (typeIndex >= word.Length);
-        if (wordTyped) {
-            //display.RemoveWord();  
+        if (typeIndex >= word.Length)
+        {
+            // Optionally reset or remove the word from the game
+            return true;
         }
-        return wordTyped;
+        return false;
     }
 
     public GameObject GetGameObject()

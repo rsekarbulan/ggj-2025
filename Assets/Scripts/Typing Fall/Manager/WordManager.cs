@@ -42,7 +42,7 @@ public class WordManager : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log($"Has Active Word: {hasActiveWord}");
+        //Debug.Log($"Has Active Word: {hasActiveWord}");
 
         // Check if activeWord's associated GameObject is null or destroyed
         if (hasActiveWord)
@@ -63,7 +63,7 @@ public class WordManager : MonoBehaviour
         // Handle typing logic
         if (Input.anyKeyDown)
         {
-            char letter = Input.inputString.Length > 0 ? Input.inputString[0] : '\0';
+            char letter = Input.inputString.Length > 0 ? char.ToLower(Input.inputString[0]) : '\0';
 
             if (letter != '\0')
             {
@@ -80,6 +80,14 @@ public class WordManager : MonoBehaviour
                         if (activeWord.WordTyped())
                         {
                             Debug.Log($"Word '{activeWord.word}' completed. Removing and resetting.");
+
+                            // Panggil fungsi EnableDestruction di ColliderManager
+                            ColliderManager colliderManager = activeWord.GetGameObject().GetComponentInChildren<ColliderManager>();
+                            if (colliderManager != null)
+                            {
+                                colliderManager.EnableDestruction();
+                            }
+
                             words.Remove(activeWord);
                             ResetActiveWord();
                         }
