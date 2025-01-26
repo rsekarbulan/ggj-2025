@@ -6,38 +6,25 @@ public class WordDisplay : MonoBehaviour
 {
     public TMP_Text text; // Ganti dengan TMP_Text
     public float fallSpeed = 0.5f;
-    private SpriteChanger spriteChanger; // Referensi ke SpriteChanger
-    private ColliderManager colliderManager; // Referensi ke ColliderManager
 
     public Words words;
 
+    private SpriteRenderer spriteRenderer; // Untuk menampilkan sprite
+    private ParticleSystem particleSystem; // Untuk efek partikel
+
     private void Start()
     {
-        // Mencoba mendapatkan komponen SpriteChanger dari child GameObject
-        spriteChanger = GetComponentInChildren<SpriteChanger>();
+        // Mendapatkan referensi ke komponen SpriteRenderer
+        spriteRenderer = GetComponentInChildren<SpriteRenderer>();
 
-        // Debugging apakah spriteChanger berhasil diambil atau tidak
-        if (spriteChanger != null)
+        if (spriteRenderer != null)
         {
-            Debug.Log("SpriteChanger ditemukan pada child GameObject.");
-        }
-        else
-        {
-            Debug.LogWarning("SpriteChanger TIDAK ditemukan pada child GameObject. Pastikan komponen terpasang.");
+            spriteRenderer.sprite = words.sprite1; // Atur sprite awal
         }
 
-        // Mencoba mendapatkan komponen ColliderManager
-        colliderManager = GetComponentInChildren<ColliderManager>();
-
-        // Debugging apakah colliderManager berhasil diambil atau tidak
-        if (colliderManager != null)
-        {
-            Debug.Log("ColliderManager ditemukan pada GameObject.");
-        }
-        else
-        {
-            Debug.LogWarning("ColliderManager TIDAK ditemukan pada GameObject. Pastikan komponen terpasang.");
-        }
+        // Mendapatkan referensi ke ParticleSystem
+        particleSystem = Instantiate(words.particleEffect, transform); // Buat instance efek partikel
+        particleSystem.Stop(); // Hentikan efek partikel pada awalnya
     }
 
     public void SetWord(string word)
@@ -52,38 +39,32 @@ public class WordDisplay : MonoBehaviour
 
         if (string.IsNullOrEmpty(text.text)) // Jika kata selesai
         {
-            Debug.Log($"Kata '{text.text}' selesai!"); // Debug log saat kata selesai
             CompleteWord();
         }
-    }
-
-    public void RemoveWord()
-    {
-        // Tidak langsung destroy, ubah sprite terlebih dahulu
-        if (spriteChanger != null)
-        {
-            spriteChanger.CompleteWord(words.wordSprite);
-        }
-    }
-
-    private void Update()
-    {
-        transform.Translate(0f, -fallSpeed * Time.deltaTime, 0f);
     }
 
     private void CompleteWord()
     {
         Debug.Log("Word completed and triggering sprite change."); // Debug log untuk metode CompleteWord
 
-        if (spriteChanger != null)
+        // Hilangkan Sprite 1
+        if (spriteRenderer != null && spriteRenderer.sprite == words.sprite1)
         {
-            spriteChanger.CompleteWord(words.wordSprite);
+            spriteRenderer.sprite = words.sprite2; // Ubah ke Sprite 2
         }
 
-        // Aktifkan penghancuran collider saat kata selesai
-        if (colliderManager != null)
+        // Aktifkan efek partikel
+        if (particleSystem != null)
         {
-            colliderManager.EnableDestruction();
+            particleSystem.Play(); // Mainkan efek partikel
         }
+
+        // Hancurkan objek setelah efek partikel selesai (opsional)
+        Destroy(gameObject, particleSystem.main.duration);
+    }
+
+    private void Update()
+    {
+        transform.Translate(0f, -fallSpeed * Time.deltaTime, 0f);
     }
 }

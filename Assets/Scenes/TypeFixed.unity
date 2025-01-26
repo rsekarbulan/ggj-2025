@@ -149,10 +149,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wordList:
-  - wordLetter: LULULUL
-    wordSprite: {fileID: 1784166102432735849, guid: fc71da7280b03ff4cad4dff575dc76e3, type: 3}
-  - wordLetter: LALALALAL
-    wordSprite: {fileID: -2936636794373932723, guid: e368c619c6c62804891463af4bd2bc99, type: 3}
+  - wordLetter: wayang
+    sprite1: {fileID: -1449121247683276029, guid: 9284976de43d1244fb6ec26f826ee173, type: 3}
+    sprite2: {fileID: 1579996785756584464, guid: 9284976de43d1244fb6ec26f826ee173, type: 3}
+    particleEffect: {fileID: 8523473290530707467, guid: cf2507908a2cbd34ca0f2e5682e64444, type: 3}
+  - wordLetter: ketapel
+    sprite1: {fileID: 258805432, guid: 9284976de43d1244fb6ec26f826ee173, type: 3}
+    sprite2: {fileID: -3028502856158810815, guid: 9284976de43d1244fb6ec26f826ee173, type: 3}
+    particleEffect: {fileID: 8523473290530707467, guid: cf2507908a2cbd34ca0f2e5682e64444, type: 3}
+  - wordLetter: otok-otok
+    sprite1: {fileID: -757200039, guid: 9284976de43d1244fb6ec26f826ee173, type: 3}
+    sprite2: {fileID: 5765821810491347286, guid: 9284976de43d1244fb6ec26f826ee173, type: 3}
+    particleEffect: {fileID: 8523473290530707467, guid: cf2507908a2cbd34ca0f2e5682e64444, type: 3}
+  - wordLetter: bakso
+    sprite1: {fileID: 889894860, guid: 9284976de43d1244fb6ec26f826ee173, type: 3}
+    sprite2: {fileID: -6335133656298233099, guid: 9284976de43d1244fb6ec26f826ee173, type: 3}
+    particleEffect: {fileID: 8523473290530707467, guid: cf2507908a2cbd34ca0f2e5682e64444, type: 3}
+  - wordLetter: congklak
+    sprite1: {fileID: -408074513, guid: 9284976de43d1244fb6ec26f826ee173, type: 3}
+    sprite2: {fileID: 1080732573934698132, guid: 9284976de43d1244fb6ec26f826ee173, type: 3}
+    particleEffect: {fileID: 8523473290530707467, guid: cf2507908a2cbd34ca0f2e5682e64444, type: 3}
+  - wordLetter: congklak
+    sprite1: {fileID: -408074513, guid: 9284976de43d1244fb6ec26f826ee173, type: 3}
+    sprite2: {fileID: 1080732573934698132, guid: 9284976de43d1244fb6ec26f826ee173, type: 3}
+    particleEffect: {fileID: 8523473290530707467, guid: cf2507908a2cbd34ca0f2e5682e64444, type: 3}
 --- !u!4 &370893441
 Transform:
   m_ObjectHideFlags: 0
@@ -292,11 +312,11 @@ Transform:
   m_GameObject: {fileID: 419209776}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -72.26299, y: -370.7406, z: 0}
-  m_LocalScale: {x: 34.90617, y: 34.90617, z: 34.90617}
+  m_LocalPosition: {x: -0.6299999, y: -3.5399997, z: 0}
+  m_LocalScale: {x: 0.33329996, y: 0.33329996, z: 0.33329996}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1509886732}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &419209782
 BoxCollider2D:
@@ -418,7 +438,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70e8ad35a386e204caea73ee43d5ce26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wordPrefab: {fileID: 8342678731867779127, guid: b2611f5d8e2f4bb45a0357b42fdefa38, type: 3}
+  wordPrefab: {fileID: 8342678731867779127, guid: e9a63903abbf07a439f56f726258c18b, type: 3}
   wordCanvas: {fileID: 1509886732}
 --- !u!114 &1319056302
 MonoBehaviour:
@@ -527,8 +547,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.009548455, y: 0.009548455, z: 0.009548455}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 419209781}
+  m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -824,7 +843,7 @@ Transform:
   m_GameObject: {fileID: 1920710104}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.02, y: -6.36, z: 0}
+  m_LocalPosition: {x: -0.02, y: -5.75, z: 0}
   m_LocalScale: {x: 18.402617, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -840,3 +859,4 @@ SceneRoots:
   - {fileID: 1761919480}
   - {fileID: 1920710106}
   - {fileID: 370893441}
+  - {fileID: 419209781}

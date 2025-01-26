@@ -11,7 +11,7 @@ public class DestroyBubble : MonoBehaviour
     private void Start()
     {
         player = GameObject.Find("Player");
-        health = player.GetComponent<Health>();
+        //health = player.GetComponent<Health>();
         circleCollider = GetComponent<CircleCollider2D>();
     }
 
@@ -19,8 +19,8 @@ public class DestroyBubble : MonoBehaviour
     {
         if (collision.CompareTag("Destroy"))
         {
-            Destroy(gameObject);
-            health.ReduceHealth();
+            Destroy(transform.parent.gameObject);
+            //health.ReduceHealth();
         }
     }
 
