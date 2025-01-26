@@ -8,6 +8,8 @@ public class ColliderManager : MonoBehaviour
     private bool wordCompleted = false; // Status apakah kata telah diisi sepenuhnya
     private bool isPopped = false; // Status apakah objek sudah "pecah"
 
+    private WinCondition winCondition; // Referensi ke WinCondition
+
     private CircleCollider2D circleCollider;
     private Health health;
     private GameObject player;
@@ -39,23 +41,49 @@ public class ColliderManager : MonoBehaviour
         {
             Debug.LogWarning("CircleCollider2D NOT found on this GameObject!");
         }
+
+        GameObject winControllerObject = GameObject.Find("WinController");
+        if (winControllerObject != null)
+        {
+            winCondition = winControllerObject.GetComponent<WinCondition>();
+            if (winCondition == null)
+            {
+                Debug.LogWarning("WinCondition component NOT found on WinController!");
+            }
+        }
+        else
+        {
+            Debug.LogWarning("WinController NOT found in the scene!");
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
         Debug.Log($"OnTriggerEnter2D with {other.gameObject.name}, wordCompleted: {wordCompleted}");
 
-        if (wordCompleted && other.CompareTag(playerTag))
+        if (other.CompareTag(playerTag) && CompareTag("Toy"))
+    {
+        // Periksa apakah worldCompleted bernilai true
+        if (wordCompleted)
         {
-            Debug.Log("Trigger detected. Destroying object...");
-            DestroyParentOrSelf();
-            ResetWordCompleted();
-        }
+            Debug.Log("Toy collected by Player!");
 
-        if (other.CompareTag(destroyTag))
-        {
+            // Tambahkan poin menggunakan Singleton WinCondition
+            WinCondition.AddToy();
+
+            // Hancurkan objek setelah dikoleksi
             DestroyParentOrSelf();
         }
+        else
+        {
+            Debug.LogWarning("Cannot collect toy. World is not completed!");
+        }
+    }
+
+    if (other.CompareTag(destroyTag))
+    {
+        DestroyParentOrSelf();
+    }
     }
 
     private void OnTriggerStay2D(Collider2D other)

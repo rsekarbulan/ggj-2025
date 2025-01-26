@@ -3,6 +3,9 @@ using UnityEngine;
 public class DragWithoutClick : MonoBehaviour
 {
     [SerializeField] private Transform targetObject; // Objek yang akan mengikuti kursor
+    [SerializeField] private float minX = -7.7f; // Batas minimum sumbu X
+    [SerializeField] private float maxX = 7.62f; // Batas maksimum sumbu X
+
     private float initialY; // Menyimpan posisi awal di sumbu Y
 
     private void Start()
@@ -25,8 +28,11 @@ public class DragWithoutClick : MonoBehaviour
             // Ambil posisi kursor di dunia
             Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
+            // Batasi nilai sumbu X antara minX dan maxX
+            float clampedX = Mathf.Clamp(mousePosition.x, minX, maxX);
+
             // Hanya ubah posisi di sumbu X, dengan mempertahankan sumbu Y tetap sama
-            targetObject.position = new Vector3(mousePosition.x, initialY, targetObject.position.z);
+            targetObject.position = new Vector3(clampedX, initialY, targetObject.position.z);
         }
     }
 }
