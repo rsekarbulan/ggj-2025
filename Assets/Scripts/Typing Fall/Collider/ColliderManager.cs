@@ -22,11 +22,11 @@ public class ColliderManager : MonoBehaviour
         player = GameObject.Find("Player");
         if (player != null)
         {
-            /*health = player.GetComponent<Health>();
+            health = player.GetComponent<Health>();
             if (health == null)
             {
                 Debug.LogWarning("Health component NOT found on Player!");
-            }*/
+            }
         }
         else
         {
@@ -52,9 +52,18 @@ public class ColliderManager : MonoBehaviour
             ResetWordCompleted();
         }
 
-        if (other.CompareTag(destroyTag))
+        if (other.CompareTag(destroyTag) && !gameObject.CompareTag("Stone"))
         {
             DestroyParentOrSelf();
+            health.ReduceHealth();
+        }
+
+        if (other.CompareTag(playerTag))
+        {
+            if (gameObject.CompareTag("Stone"))
+            {
+                health.ReduceHealth();
+            }
         }
     }
 
@@ -66,24 +75,6 @@ public class ColliderManager : MonoBehaviour
         {
             ExecuteDestruction();
             ResetWordCompleted();
-        }
-    }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.collider.CompareTag(playerTag))
-        {
-            if (isPopped)
-            {
-                // Tambahkan skor (jika diperlukan)
-            }
-            else
-            {
-                if (circleCollider != null)
-                {
-                    circleCollider.isTrigger = true;
-                }
-            }
         }
     }
 

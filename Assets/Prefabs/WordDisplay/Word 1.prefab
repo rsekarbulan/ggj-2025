@@ -183,6 +183,7 @@ GameObject:
   - component: {fileID: 613057015495222260}
   - component: {fileID: 3326755271228999731}
   - component: {fileID: 934836107872915156}
+  - component: {fileID: -8530714065220025909}
   m_Layer: 5
   m_Name: Word 1
   m_TagString: Untagged
@@ -272,7 +273,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -329,3 +330,16 @@ MonoBehaviour:
     sprite1: {fileID: 0}
     sprite2: {fileID: 0}
     particleEffect: {fileID: 0}
+    tag: 
+--- !u!210 &-8530714065220025909
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8342678731867779127}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 2
+  m_SortAtRoot: 0

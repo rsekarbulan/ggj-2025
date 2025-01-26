@@ -20,13 +20,22 @@ public class Word
 
         typeIndex = 0;
         display = _display;
-        display.SetWord(word);  
+        display.SetWord(word);
         display.words = _word;
     }
 
     public char GetNextLetter()
     {
-        return word[typeIndex];
+        if (typeIndex < word.Length)
+        {
+            return word[typeIndex];
+        }
+        else
+        {
+            // Jika tidak ada huruf berikutnya, kembalikan '\0'
+            Debug.LogWarning($"GetNextLetter called with out-of-bounds typeIndex ({typeIndex}) for word: '{word}'");
+            return '\0';
+        }
     }
 
     public void TypeLetter()
@@ -61,4 +70,4 @@ public class Word
         }
         return display.gameObject;
     }
-}   
+}
