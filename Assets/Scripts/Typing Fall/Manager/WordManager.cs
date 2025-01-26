@@ -12,18 +12,17 @@ public class WordManager : MonoBehaviour
 
     public WordSpawner wordSpawner;
 
-
-
     public void AddWord()
     {
+        Words newWords = WordGenerator.Instance.GetRandomWord();
+        WordDisplay wordDisplay = wordSpawner.SpawnWord(newWords);
 
-        //WordDisplay wordDisplay = wordSpawner.SpawnWord();
-
-        Word word = new Word(WordGenerator.Instance.GetRandomWord(), wordSpawner.SpawnWord());
-        //Debug.Log(word.word);
-
+        Word word = new Word(newWords, wordDisplay);
         words.Add(word);
     }
+
+
+
 
     private void ResetActiveWord()
     {

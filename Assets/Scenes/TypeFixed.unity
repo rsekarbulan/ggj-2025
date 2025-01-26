@@ -153,26 +153,32 @@ MonoBehaviour:
     sprite1: {fileID: -1449121247683276029, guid: 9284976de43d1244fb6ec26f826ee173, type: 3}
     sprite2: {fileID: 1579996785756584464, guid: 9284976de43d1244fb6ec26f826ee173, type: 3}
     particleEffect: {fileID: 8523473290530707467, guid: cf2507908a2cbd34ca0f2e5682e64444, type: 3}
+    tag: Toy
   - wordLetter: ketapel
     sprite1: {fileID: 258805432, guid: 9284976de43d1244fb6ec26f826ee173, type: 3}
     sprite2: {fileID: -3028502856158810815, guid: 9284976de43d1244fb6ec26f826ee173, type: 3}
     particleEffect: {fileID: 8523473290530707467, guid: cf2507908a2cbd34ca0f2e5682e64444, type: 3}
+    tag: Toy
   - wordLetter: otokotok
     sprite1: {fileID: -757200039, guid: 9284976de43d1244fb6ec26f826ee173, type: 3}
     sprite2: {fileID: 5765821810491347286, guid: 9284976de43d1244fb6ec26f826ee173, type: 3}
     particleEffect: {fileID: 8523473290530707467, guid: cf2507908a2cbd34ca0f2e5682e64444, type: 3}
+    tag: Toy
   - wordLetter: thuprok
     sprite1: {fileID: 889894860, guid: 9284976de43d1244fb6ec26f826ee173, type: 3}
     sprite2: {fileID: -6335133656298233099, guid: 9284976de43d1244fb6ec26f826ee173, type: 3}
     particleEffect: {fileID: 8523473290530707467, guid: cf2507908a2cbd34ca0f2e5682e64444, type: 3}
+    tag: Toy
   - wordLetter: dakon
     sprite1: {fileID: -408074513, guid: 9284976de43d1244fb6ec26f826ee173, type: 3}
     sprite2: {fileID: 1080732573934698132, guid: 9284976de43d1244fb6ec26f826ee173, type: 3}
     particleEffect: {fileID: 8523473290530707467, guid: cf2507908a2cbd34ca0f2e5682e64444, type: 3}
+    tag: Toy
   - wordLetter: batu
     sprite1: {fileID: -651116561, guid: 9284976de43d1244fb6ec26f826ee173, type: 3}
     sprite2: {fileID: -1719648901341550622, guid: 9284976de43d1244fb6ec26f826ee173, type: 3}
     particleEffect: {fileID: 8523473290530707467, guid: cf2507908a2cbd34ca0f2e5682e64444, type: 3}
+    tag: Stone
 --- !u!4 &370893441
 Transform:
   m_ObjectHideFlags: 0
